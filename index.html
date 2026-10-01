@@ -1,342 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
+<html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex,nofollow">
-<title>The Aushi Reset — a concept for Aushi's Way♡</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Aushi's Way♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fbf7f2;--card:#fffdfb;--ink:#3a2e38;--mute:#8a7d86;--blush:#f4dde0;--rose:#c4788a;--rose-d:#a85e72;--lav:#ddd6ee;--lav-d:#7a6aa6;--line:#eee4e2;--sh:0 10px 30px -14px rgba(120,80,100,.25);--serif:'Fraunces',Georgia,serif;--sans:'DM Sans',system-ui,-apple-system,sans-serif}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom)}
-h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12;letter-spacing:-.01em}
-h1{font-size:clamp(2.2rem,6vw,4.1rem)}h2{font-size:clamp(1.7rem,4vw,2.6rem);margin-bottom:.6rem}h3{font-size:1.25rem}
-p{color:var(--mute)}
-section{padding:clamp(56px,9vw,104px) 20px}
-.w{max-width:1040px;margin:auto}.c{text-align:center}.c p{max-width:560px;margin-inline:auto}
-.lead{font-size:1.08rem;max-width:560px;margin-top:.7rem}
-.tag{display:inline-block;background:var(--blush);color:var(--rose-d);font-size:.8rem;font-weight:500;padding:4px 12px;border-radius:99px;margin-bottom:1rem}
-.tag.l{background:var(--lav);color:var(--lav-d)}
-nav{position:sticky;top:0;z-index:20;background:rgba(251,247,242,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:max(10px,env(safe-area-inset-top)) 20px 10px}
-nav .in{max-width:1040px;margin:auto;display:flex;align-items:center;gap:20px;justify-content:space-between}
-nav b{font-family:var(--serif);font-weight:500;white-space:nowrap}
-nav .l{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
-nav a{color:var(--mute);text-decoration:none;font-size:.88rem;padding:6px 12px;border-radius:99px;white-space:nowrap;transition:.2s}
-nav a:hover,nav a.on{background:var(--blush);color:var(--rose-d)}
-.btn{display:inline-block;background:var(--ink);color:#fff;border:0;border-radius:99px;padding:14px 28px;font:500 1rem var(--sans);text-decoration:none;cursor:pointer;transition:.25s}
-.btn:hover{background:var(--rose-d);transform:translateY(-2px)}
-:focus-visible{outline:2px solid var(--lav-d);outline-offset:2px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--sh);padding:22px}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:2.2rem}
-.grid .card{transition:.25s}.grid .card:hover{transform:translateY(-4px)}
-.grid .card p{font-size:.95rem;margin-top:6px}
-.dot{width:38px;height:38px;border-radius:50%;background:var(--blush);display:grid;place-items:center;margin-bottom:14px;color:var(--rose-d)}
-.dot:nth-child(even),.alt .dot{background:var(--lav);color:var(--lav-d)}
-/* hero */
-.hero{display:grid;gap:44px;align-items:center;grid-template-columns:1.05fr .95fr;padding-top:clamp(40px,7vw,80px)}
-.hero p.s{font-family:var(--serif);font-style:italic;color:var(--rose-d);font-size:1.15rem;margin:1.2rem 0 .6rem}
-.hero .row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:1.6rem}
-.hero .row span{font-size:.85rem;color:var(--mute)}
-.mock{background:linear-gradient(160deg,#fff,#fbf0f1);border:1px solid var(--line);border-radius:32px;box-shadow:0 30px 60px -28px rgba(120,80,110,.4);padding:20px}
-.mock .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
-.mock .top h3{font-size:1.4rem}
-.mg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.mini{background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 14px;font-size:.88rem}
-.mini small{display:block;color:var(--mute);font-size:.75rem}
-.mini.full{grid-column:1/-1}
-.ring{--p:68;width:64px;height:64px;border-radius:50%;background:conic-gradient(var(--rose) calc(var(--p)*1%),var(--blush) 0);display:grid;place-items:center;transition:.6s}
-.ring i{width:48px;height:48px;border-radius:50%;background:#fff;display:grid;place-items:center;font:normal 600 .85rem var(--sans)}
-.bar{height:8px;background:var(--blush);border-radius:9px;overflow:hidden}
-.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--rose),#e0a4b0);border-radius:9px;transition:width 1s cubic-bezier(.2,.8,.2,1)}
-.bar.lv{background:var(--lav)}.bar.lv i{background:linear-gradient(90deg,var(--lav-d),#aa9fd0)}
-/* checks */
-.ck{display:flex;gap:10px;align-items:center;padding:9px 4px;cursor:pointer;font-size:.95rem;border-radius:10px;user-select:none;width:100%;background:none;border:0;text-align:left;font-family:inherit;color:var(--ink)}
-.ck:hover{background:#fbf3f3}
-.ck b{flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid #d9c6cb;display:grid;place-items:center;font-size:.7rem;color:transparent;transition:.2s}
-.ck[aria-pressed=true] b{background:var(--rose);border-color:var(--rose);color:#fff;transform:scale(1.08)}
-.ck[aria-pressed=true] span{color:var(--mute);text-decoration:line-through;text-decoration-color:#d9c6cb}
-.pr{display:flex;justify-content:space-between;font-size:.8rem;color:var(--mute);margin:12px 0 6px}
-/* product */
-.prod{background:#fff;border:1px solid var(--line);border-radius:32px;box-shadow:0 30px 70px -34px rgba(120,80,110,.45);margin-top:2rem;overflow:hidden}
-.tabs{display:flex;gap:6px;padding:12px;background:#fbf3f3;overflow-x:auto;scrollbar-width:none}
-.tabs button{flex:1;min-width:76px;border:0;background:none;padding:10px 14px;border-radius:99px;font:500 .92rem var(--sans);color:var(--mute);cursor:pointer;transition:.2s}
-.tabs button[aria-selected=true]{background:#fff;color:var(--rose-d);box-shadow:0 4px 12px -6px rgba(120,80,100,.4)}
-.pane{padding:clamp(18px,4vw,34px)}.pane[hidden]{display:none}
-.two{display:grid;gap:18px;grid-template-columns:1fr 1fr}
-.two>div{background:var(--bg);border-radius:22px;padding:20px}
-.two h3{margin-bottom:8px}
-.moods{display:flex;gap:8px;flex-wrap:wrap}
-.moods button,.chip{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:8px 14px;font:inherit;font-size:.9rem;cursor:pointer;transition:.2s;color:var(--ink)}
-.moods button:hover,.chip:hover{border-color:var(--rose)}
-.moods button[aria-pressed=true],.chip[aria-pressed=true]{background:var(--blush);border-color:var(--rose);color:var(--rose-d)}
-.chip[aria-pressed=true].lv{background:var(--lav);border-color:var(--lav-d);color:var(--lav-d)}
-/* month */
-.fields input{width:100%;border:0;border-bottom:1.5px dashed #dcc9ce;background:none;padding:10px 0;font:inherit;color:var(--ink)}
-.fields input:focus{outline:0;border-color:var(--rose)}
-.fields label{display:flex;gap:12px;align-items:center;font-family:var(--serif);color:var(--rose-d)}
-.areas{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 22px}
-.quote{font-family:var(--serif);font-style:italic;font-size:1.3rem;margin-bottom:12px}
-/* goals */
-.goal{cursor:pointer;transition:.25s;text-align:left;font:inherit;color:inherit;width:100%}
-.goal:hover,.goal[aria-pressed=true]{border-color:var(--rose)}
-.goal .pr{margin-top:10px}
-.big{font:400 3rem/1 var(--serif);color:var(--rose-d)}
-.steppers{display:flex;gap:10px;align-items:center;margin:12px 0}
-.steppers button{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-size:1.2rem;cursor:pointer}
-.steppers button:hover{border-color:var(--rose)}
-/* habits */
-.hscroll{overflow-x:auto;padding-bottom:6px}
-.hg{display:grid;gap:7px;align-items:center;min-width:620px}
-.hg span{font-size:.85rem}
-.hg .d{text-align:center;font-size:.7rem;color:var(--mute)}
-.hc{width:100%;aspect-ratio:1;max-width:22px;border-radius:50%;border:1.5px solid #e6d6da;background:#fff;cursor:pointer;padding:0;transition:.15s}
-.hc[aria-pressed=true]{background:var(--rose);border-color:var(--rose)}
-.hc.lv[aria-pressed=true]{background:var(--lav-d);border-color:var(--lav-d)}
-.hc:hover{transform:scale(1.2)}
-.note{text-align:center;font-family:var(--serif);font-style:italic;color:var(--rose-d);margin-top:20px;font-size:1.15rem}
-/* reset */
-.reset{background:linear-gradient(160deg,var(--lav),var(--blush));border-radius:32px;padding:clamp(24px,5vw,48px)}
-.reset .card{max-width:480px;margin:2rem auto 0}
-.again{text-align:center;font-family:var(--serif);font-size:1.6rem;padding:0;max-height:0;overflow:hidden;opacity:0;transition:.6s;color:var(--rose-d)}
-.again.on{max-height:90px;opacity:1;padding-top:16px}
-.week{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-/* flow */
-.flow{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;margin:2.2rem 0}
-.flow div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 18px;font-weight:500;box-shadow:var(--sh);font-size:.95rem}
-.flow div.hl{background:var(--blush);color:var(--rose-d)}
-.flow em{font-style:normal;color:var(--rose)}
-.steps{counter-reset:s}
-.steps .card{position:relative}
-.steps .card::before{counter-increment:s;content:counter(s);font:italic 400 2.4rem var(--serif);color:var(--rose);display:block;margin-bottom:6px}
-.split{display:flex;height:64px;border-radius:20px;overflow:hidden;margin:2rem auto 8px;max-width:520px;font-weight:600;color:#fff}
-.split div{display:grid;place-items:center;transition:flex .5s}
-.split div:first-child{background:var(--rose);flex:70}.split div:last-child{background:var(--lav-d);flex:30}
-.badge{display:inline-block;border:1px dashed var(--rose);color:var(--rose-d);border-radius:99px;font-size:.82rem;padding:5px 14px;margin-top:10px}
-.final{background:var(--ink);color:#fff;text-align:center;border-radius:40px;margin:0 16px 16px}
-.final h2{color:#fff;max-width:640px;margin-inline:auto}.final p{color:#cdbfc8;max-width:520px;margin:1rem auto 1.8rem}
-.final .btn{background:var(--blush);color:var(--ink)}.final .btn:hover{background:#fff}
-.final small{display:block;margin-top:2rem;color:#a79aa3}
-#toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,40px);background:var(--ink);color:#fff;padding:12px 22px;border-radius:99px;opacity:0;transition:.35s;z-index:30;font-size:.92rem;pointer-events:none}
-#toast.on{opacity:1;transform:translate(-50%,0)}
-@media(max-width:820px){.hero,.two{grid-template-columns:1fr}nav b{display:none}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-</style>
-</head>
-<body>
-<nav aria-label="Sections"><div class="in"><b>Aushi's Way♡</b><div class="l">
-<a href="#idea">Idea</a><a href="#product">The Aushi Reset</a><a href="#month">Month</a><a href="#week">Week</a><a href="#goals">Goals</a><a href="#habits">Habits</a><a href="#reset">Reset</a><a href="#why">Why</a><a href="#family">Ecosystem</a><a href="#how">How</a><a href="#model">Model</a><a href="#contact">Let's talk</a></div></div></nav>
- 
-<section><div class="w hero">
-<div>
-<span class="tag">Private creator prototype</span>
-<h1>What if your everyday content became something your audience could actually use?</h1>
-<p class="s">A Datarbol × Aushi's Way♡ concept</p>
-<p class="lead">Your content already revolves around routines, resets, planning and becoming a better version of yourself. We explored what that could look like as an interactive digital experience for your audience.</p>
-<div class="row"><a class="btn" href="#idea">Explore the concept ↓</a><span>Prototype UI · nothing here is live</span></div>
-</div>
-<div class="mock" aria-label="Prototype dashboard preview">
-<div class="top"><h3>Good morning ♡</h3><small style="color:var(--mute)">Today</small></div>
-<div class="mg">
-<div class="mini full"><small>Today's focus</small><b style="font-family:var(--serif);font-weight:400;font-size:1.05rem">Let's make today count.</b></div>
-<div class="mini full"><small>3 priorities</small><div id="hp"></div></div>
-<div class="mini" style="display:flex;gap:12px;align-items:center"><div class="ring" id="hr"><i>68%</i></div><div><small>Habits</small>this week</div></div>
-<div class="mini"><small>Mood</small>😊 Good<small style="margin-top:8px">Water</small><div class="bar"><i data-w="62"></i></div></div>
-<div class="mini"><small>Workout</small>30 min · planned</div>
-<div class="mini"><small>Reading</small>10 pages<div class="bar lv" style="margin-top:6px"><i data-w="40"></i></div></div>
-<div class="mini"><small>Personal goal</small>Stay consistent</div>
-<div class="mini"><small>Reset</small>10 minutes when it feels messy ♡</div>
-</div></div></div></section>
- 
-<section id="idea"><div class="w c">
-<h2>Your content already has the ingredients.</h2>
-<p>Everything people come to you for, gathered in one place.</p>
-<div class="grid" style="text-align:left" id="ideas"></div>
-<p style="margin-top:2.4rem;font-family:var(--serif);font-size:1.3rem;color:var(--ink)">Datarbol turns the idea into an interactive product.</p>
-</div></section>
- 
-<section id="product" style="background:#fff"><div class="w c">
-<span class="tag l">Proposed product name</span>
-<h2>The Aushi Reset</h2>
-<p>A simple system for planning your month, resetting your week and staying on track with the little things.</p>
-<div class="prod" style="text-align:left">
-<div class="tabs" role="tablist" id="tabs"></div>
-<div class="pane" id="p-today"><div class="two">
-<div><small style="color:var(--mute)">Good morning ♡</small><h3 style="margin:4px 0 14px">Let's make today count.</h3>
-<small style="color:var(--mute)">Today's focus</small><div class="checks" data-g="td" data-items="Finish assignment|30-minute workout|Read 10 pages"></div>
-<div class="pr"><span>Mood</span></div><div class="moods" id="moods"></div></div>
-<div><h3>Daily habits</h3><div class="checks" data-g="td" data-items="Drink water|Move your body*|Skincare*|Read|Journal*"></div>
-<div style="display:flex;align-items:center;gap:16px;margin-top:14px"><div class="ring" id="tr"><i>0%</i></div><div><b>Today's progress</b><br><small style="color:var(--mute)">Tick things off to watch it move.</small></div></div></div>
-</div></div>
-<div class="pane" id="p-week" hidden><h3>This week at a glance</h3><p style="margin:6px 0 14px">Seven small days, one clear intention.</p><div class="moods" id="days"></div><div class="pr"><span>Week progress</span><span id="wv">0 of 7 days</span></div><div class="bar"><i id="wb"></i></div></div>
-<div class="pane" id="p-month" hidden><h3>This month's focus</h3><p style="margin:6px 0 14px">Choose what gets your energy. Full planner below ↓</p><div class="moods" id="mfocus"></div></div>
-<div class="pane" id="p-goals" hidden><h3>Goal in focus</h3><p style="margin:6px 0 14px">Example: be more consistent with fitness. See the tracker below ↓</p><div class="bar"><i data-w="78"></i></div><div class="pr"><span>9 of 12 workouts</span><span>78%</span></div></div>
-<div class="pane" id="p-habits" hidden><h3>Habits</h3><p style="margin:6px 0 14px">Tap a day to mark it. Full tracker below ↓</p><div class="moods" id="mh"></div></div>
-</div></div></section>
- 
-<section id="month"><div class="w">
-<h2>Plan the month without overplanning your life.</h2>
-<p class="lead">Pick a focus, name three priorities, and set an intention. That's the whole plan.</p>
-<div class="two" style="margin-top:2rem;gap:18px">
-<div class="card"><h3>This month's focus</h3><div class="areas" id="areas"></div>
-<h3>My 3 priorities</h3><div class="fields" style="margin-top:6px"><label>01<input aria-label="Priority 1" placeholder="Type something…"></label><label>02<input aria-label="Priority 2" placeholder="…"></label><label>03<input aria-label="Priority 3" placeholder="…"></label></div></div>
-<div class="card"><h3>Things I want to do</h3><div class="checks" data-g="mo" data-items="Try something new|Read a book|Organize my room|Spend time with family|Take myself somewhere nice"></div>
-<h3 style="margin-top:20px">Monthly intention</h3><p style="margin:4px 0 12px">I want this month to feel…</p><div class="moods" id="feel"></div><p class="quote" id="fq" style="margin:14px 0 0;font-size:1.15rem"></p></div>
-</div></div></section>
- 
-<section id="week" style="background:#fff"><div class="w">
-<h2>Your Sunday reset, turned into a system.</h2>
-<p class="lead">Reflect, reset, prepare. One calm flow instead of five different notes.</p>
-<div class="week" style="margin-top:2rem">
-<div class="card"><h3>Reflect</h3><div class="checks" data-g="wk" data-items="What went well?|What didn't?|What did I learn?"></div></div>
-<div class="card"><h3>Reset</h3><div class="checks" data-g="wk" data-items="Clean space|Plan meals|Plan outfits|Organize tasks|Review calendar"></div></div>
-<div class="card"><h3>Prepare</h3><div class="checks" data-g="wk" data-items="Top 3 priorities|Appointments|Important tasks|Things to look forward to"></div></div></div>
-<div class="card" style="margin-top:16px"><div class="pr" style="margin-top:0"><span>Reset progress</span><span id="wkv">0%</span></div><div class="bar"><i id="wkb"></i></div>
-<p style="margin-top:16px">This week's intention</p><div class="fields"><label style="font-size:1.2rem">I want to feel<input aria-label="This week I want to feel" placeholder="calm, focused, light…"></label></div></div>
-</div></section>
- 
-<section id="goals"><div class="w">
-<h2>Big goals become easier when you can see the small steps.</h2>
-<p class="lead">Example goals for the prototype. Tap one to see its steps.</p>
-<div class="two" style="margin-top:2rem;align-items:start">
-<div style="display:grid;gap:10px" id="glist"></div>
-<div class="card" id="gd"></div></div>
-</div></section>
- 
-<section id="habits" style="background:#fff"><div class="w">
-<h2>Consistency, without the pressure.</h2>
-<p class="lead">Tap any day to mark it done. Example month, just for the prototype.</p>
-<div class="card hscroll" style="margin-top:2rem"><div class="hg" id="hg"></div></div>
-<p class="note">You don't need a perfect month. You just need to keep going. ♡</p>
-</div></section>
- 
-<section id="reset"><div class="w"><div class="reset c">
-<h2>For the days when everything feels a little messy.</h2>
-<p>A gentle ten minutes to find your footing.</p>
-<div class="card" style="text-align:left"><h3>My 10-minute reset</h3><div class="checks" data-g="rs" data-items="Clear my desk|Drink water|Put my phone away|Write down everything on my mind|Choose today's 3 priorities|Take a deep breath"></div></div>
-<div class="again" id="again" aria-live="polite">Okay. Let's start again. ♡</div>
-</div></div></section>
- 
-<section id="why" style="background:#fff"><div class="w c">
-<h2>From content people watch → to something they use.</h2>
-<div class="flow"><div>YouTube content</div><em>↓</em><div>Aushi's ideas</div><em>↓</em><div>Interactive tools</div><em>↓</em><div>Audience uses them</div><em>↓</em><div class="hl">Datarbol platform</div></div>
-<p>Instead of creating another downloadable PDF that gets forgotten in a folder, the concept is to create a simple web-based experience your audience can return to every month and every week.</p>
-</div></section>
- 
-<section id="family"><div class="w c">
-<span class="tag l">Potential future products</span>
-<h2>It doesn't have to be just one product.</h2>
-<p>Ideas we could shape together. None of these exist yet.</p>
-<div class="grid" style="text-align:left" id="eco"></div>
-</div></section>
- 
-<section id="how" style="background:#fff"><div class="w c">
-<h2>You bring the ideas. We build the experience.</h2>
-<div class="grid steps" style="text-align:left">
-<div class="card"><h3>You</h3><p>Your content, personality, ideas and understanding of your audience.</p></div>
-<div class="card"><h3>Datarbol</h3><p>Product design, interactive tools, technology and platform.</p></div>
-<div class="card"><h3>Together</h3><p>A digital product your audience can actually use.</p></div></div>
-<p style="margin-top:2rem;font-family:var(--serif);font-size:1.25rem;color:var(--ink)">You don't need to become a software developer.</p>
-</div></section>
- 
-<section id="model"><div class="w c">
-<h2>A product built around your audience.</h2>
-<p>The collaboration could potentially work through a revenue-sharing model.</p>
-<div class="split" role="img" aria-label="Example split: Creator 70 percent, Datarbol 30 percent"><div>Creator 70%</div><div>Datarbol 30%</div></div>
-<span class="badge">Illustrative collaboration model — to be discussed</span>
-</div></section>
- 
-<section id="vision" style="background:#fff"><div class="w c">
-<h2>One idea can become a whole ecosystem.</h2>
-<div class="flow"><div>YouTube content</div><em>→</em><div>Free planning tool</div><em>→</em><div>Monthly Reset</div><em>→</em><div>Weekly Reset</div><em>→</em><div>Goal Tracker</div><em>→</em><div class="hl">Complete Life Dashboard</div></div>
-<p>The goal isn't to turn your content into a complicated business. It's to build useful products around the things your audience already comes to you for.</p>
-</div></section>
- 
-<section class="final" id="contact"><div class="w">
-<h2>You already have the content. Let's turn the ideas into something people can use. ♡</h2>
-<p>This is only a prototype. The actual product would be shaped around your content, your audience and the things you genuinely enjoy creating.</p>
-<button class="btn" id="cta">Let's explore the idea</button>
-<small>A Datarbol creator collaboration concept</small>
-</div></section>
-<div id="toast" role="status"></div>
- 
+:root{color-scheme:light;--bg:#faf6f3;--ink:#3b2f33;--mute:#8a7b80;--rose:#c98591;--blush:#f4e2e2;--sage:#9fb3a0;--sagebg:#e8eee6;--gold:#c9a66b;--line:#efe4e2;--r:22px;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.55 Figtree,system-ui,sans-serif;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:500;margin:0;letter-spacing:-.01em;line-height:1.15}
+h1{font-size:clamp(34px,7vw,58px)}h2{font-size:clamp(26px,4.5vw,36px)}h3{font-size:19px}
+p{margin:.3em 0}.mute{color:var(--mute)}.sm{font-size:13px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:#faf6f3ee;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{max-width:1080px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:16px}
+.logo{font:500 22px Fraunces,serif;cursor:pointer;flex:1;white-space:nowrap}.logo i{color:var(--rose);font-style:normal}
+.dnav{display:none;gap:4px}.dnav button,.bnav button{border:0;background:none;font:500 14px Figtree;color:var(--mute);padding:8px 12px;border-radius:99px;cursor:pointer}
+.dnav button.on{background:var(--blush);color:var(--ink)}
+.pill{border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 12px;font:600 12px Figtree;cursor:pointer;color:var(--ink)}
+.pill.pro{background:var(--ink);color:#fff;border-color:var(--ink)}
+.bnav{position:fixed;bottom:0;left:0;right:0;z-index:20;background:#fffffff2;border-top:1px solid var(--line);display:flex;overflow-x:auto;padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px));gap:2px}
+.bnav button{flex:1 0 auto;display:flex;flex-direction:column;align-items:center;font-size:11px;padding:6px 10px;border-radius:14px}.bnav button b{font-size:18px;font-weight:400}.bnav button.on{background:var(--blush);color:var(--ink)}
+@media(min-width:860px){.dnav{display:flex}.bnav{display:none}body{padding-bottom:0}}
+main{max-width:1080px;margin:auto;padding:22px 18px 40px}
+.grid{display:grid;gap:16px}@media(min-width:760px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:0 8px 24px -16px #6b3f4a55}
+.card.soft{background:var(--blush);border-color:transparent;box-shadow:none}.card.sage{background:var(--sagebg);border-color:transparent;box-shadow:none}
+.card h3{margin-bottom:10px}
+.btn{border:0;border-radius:99px;padding:12px 22px;font:600 14px Figtree;cursor:pointer;background:var(--ink);color:#fff}
+.btn.rose{background:var(--rose)}.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}.btn.sm{padding:7px 14px;font-size:12px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.sp{justify-content:space-between}
+input[type=text],input[type=number],textarea{width:100%;border:1px solid var(--line);background:#fffdfc;border-radius:14px;padding:11px 13px;font:inherit;color:inherit;margin:4px 0}
+textarea{min-height:76px;resize:vertical}input:focus,textarea:focus,button:focus-visible{outline:2px solid var(--rose);outline-offset:1px}
+label.f{display:block;font-size:13px;color:var(--mute);margin-top:8px}
+.ck{display:flex;gap:10px;align-items:center;padding:7px 0;cursor:pointer}.ck input{accent-color:var(--rose);width:19px;height:19px;flex:none}.ck input:checked+span{text-decoration:line-through;color:var(--mute)}
+.bar2{height:9px;background:var(--line);border-radius:9px;overflow:hidden}.bar2 i{display:block;height:100%;background:linear-gradient(90deg,var(--rose),#e3b3ba);border-radius:9px;transition:width .5s}
+.bar2.s i{background:var(--sage)}
+.ring{--p:0;width:92px;height:92px;border-radius:50%;background:conic-gradient(var(--rose) calc(var(--p)*1%),var(--line) 0);display:grid;place-items:center;flex:none;position:relative}
+.ring:before{content:"";position:absolute;inset:9px;background:#fff;border-radius:50%}.ring b{position:relative;font:500 20px Fraunces,serif}.ring.big{width:130px;height:130px}.ring.soft:before{background:var(--blush)}
+.hero{padding:34px 0 10px}.hero p.lead{font-size:17px;max-width:520px;color:var(--mute);margin:14px 0 22px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 14px;cursor:pointer;font:500 13px Figtree;color:var(--ink)}.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.moods{display:flex;gap:8px}.moods button{font-size:28px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:8px 10px;cursor:pointer;filter:grayscale(.8);opacity:.7}.moods button.on{filter:none;opacity:1;border-color:var(--rose);background:var(--blush);transform:scale(1.08)}
+.pg-h{margin:6px 0 20px}.pg-h p{color:var(--mute);max-width:560px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center;font-size:13px}.cal span{padding:8px 0;border-radius:12px}.cal .h{color:var(--mute);font-size:11px}.cal .ev{background:var(--blush);font-weight:600;cursor:help}.cal .td{outline:2px solid var(--rose)}
+.tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:99px;background:var(--sagebg);color:#5c755d}.tag.pr{background:#f3ead8;color:#8c6d2f}
+.lock{position:relative;opacity:.85}.lock:after{content:"🔒";position:absolute;top:14px;right:16px}
+.tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.price{font:500 38px Fraunces,serif}.price small{font:400 14px Figtree;color:var(--mute)}
+ul.t{list-style:none;padding:0;margin:12px 0}ul.t li{padding:4px 0}ul.t li:before{content:"✓ ";color:var(--rose);font-weight:700}
+.bars{display:flex;gap:10px;align-items:flex-end;height:130px}.bars div{flex:1;background:linear-gradient(var(--rose),#e8c1c6);border-radius:10px 10px 4px 4px;position:relative;min-height:6px;transition:height .5s}.bars div span{position:absolute;top:-20px;left:0;right:0;text-align:center;font-size:12px}.bars+.bars{height:auto;margin-top:4px}.bars+.bars span{flex:1;text-align:center;font-size:11px;color:var(--mute)}
+.blur{filter:blur(5px);pointer-events:none;user-select:none}
+.ov{position:fixed;inset:0;background:#3b2f3366;backdrop-filter:blur(4px);z-index:50;display:grid;place-items:center;padding:18px;animation:f .25s}
+.mod{background:#fff;border-radius:28px;padding:28px;max-width:430px;width:100%;max-height:90vh;overflow:auto;animation:u .3s}
+.full{background:var(--bg);overflow:auto}.full .mod{background:none;max-width:560px;text-align:center}
+.opt{display:block;width:100%;text-align:left;border:1px solid var(--line);background:#fff;border-radius:16px;padding:14px 16px;margin:8px 0;cursor:pointer;font:500 15px Figtree;color:var(--ink)}.opt.on{border-color:var(--rose);background:var(--blush)}
+.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 20px;border-radius:99px;z-index:60;font-size:14px;animation:u .3s}
+.done{text-align:center}.done .h{font-size:60px;color:var(--rose);animation:pop .8s}
+@keyframes f{from{opacity:0}}@keyframes u{from{opacity:0;transform:translateY(14px)}}@keyframes pop{0%{transform:scale(.3);opacity:0}60%{transform:scale(1.25)}100%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+footer{border-top:1px solid var(--line);text-align:center;padding:28px 18px 32px;color:var(--mute);font-size:13px}footer a{color:var(--ink);margin:0 8px;cursor:pointer}
+.gl{border-left:4px solid var(--rose)}
+</style></head><body>
+<header><div class="bar"><div class="logo" data-a="go" data-v="home">Aushi’s Way<i>♡</i></div><nav class="dnav" id="dn"></nav><button class="pill" id="plan" data-a="plan"></button></div></header>
+<main id="app"></main>
+<footer><div style="font:500 18px Fraunces,serif;color:var(--ink)">Aushi’s Way♡</div><p>Plan. Reset. Grow.</p><p><a data-a="go" data-v="home">Home</a><a>Privacy</a><a>Terms</a></p><p class="sm">Powered by Datarbol · <a data-a="reset" style="margin:0;color:var(--mute)">reset demo</a></p></footer>
+<nav class="bnav" id="bn"></nav>
+<div id="layer"></div>
 <script>
-const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
-const store={get(k,d){try{return JSON.parse(localStorage.getItem('aw:'+k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem('aw:'+k,JSON.stringify(v))}catch(e){}}};
-const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2400)};
-const ico=p=>`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
- 
-// idea cards
-const ideas=[['Monthly Plans','Plan the month before it starts.','<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/>'],['Weekly Reset','A simple Sunday/Monday reset system.','<path d="M4 12a8 8 0 1 0 3-6.2M4 4v4h4"/>'],['Goal Tracking','Turn goals into small actions.','<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/>'],['Daily Routine','Keep track of the little things that make your days better.','<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/>'],['Habit Tracking','Build consistency without making life feel like a spreadsheet.','<path d="M5 12l4 4 10-10"/>'],['Life Organization','One place to organize the things that normally live across notes, screenshots and planners.','<rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/>']];
-$('#ideas').innerHTML=ideas.map((x,i)=>`<div class="card ${i%2?'alt':''}"><div class="dot">${ico(x[2])}</div><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join('');
-const eco=[['The Monthly Reset','Monthly planning + reflection'],['The Weekly Reset','Weekly planning + reset'],['My Goal System','Goals + milestones + progress'],['Habit Tracker','Simple habit consistency system'],['30-Day Challenge','A structured challenge around one specific goal'],['The Complete Life Dashboard','A premium combination of all the above']];
-$('#eco').innerHTML=eco.map((x,i)=>`<div class="card ${i%2?'alt':''}"><div class="dot">♡</div><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join('');
- 
-// checklists
-const groups={};
-function updateGroup(g){const l=groups[g]||[];const n=l.filter(b=>b.getAttribute('aria-pressed')=='true').length,p=Math.round(n/l.length*100);
- if(g=='td')$('#tr').style.setProperty('--p',p),$('#tr i').textContent=p+'%';
- if(g=='wk')$('#wkb').style.width=p+'%',$('#wkv').textContent=p+'%';
- if(g=='rs')$('#again').classList.toggle('on',p==100)}
-$$('.checks').forEach(c=>{const g=c.dataset.g;groups[g]=groups[g]||[];
- c.innerHTML=c.dataset.items.split('|').map(t=>{const on=t.endsWith('*');return `<button class="ck" aria-pressed="${on}"><b>✓</b><span>${on?t.slice(0,-1):t}</span></button>`}).join('');
- $$('.ck',c).forEach(b=>{groups[g].push(b);b.onclick=()=>{b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!='true');updateGroup(g)}})});
-Object.keys(groups).forEach(updateGroup);
-// hero priorities (mirror)
-$('#hp').innerHTML=['Finish assignment','30-minute workout','Read 10 pages'].map(t=>`<button class="ck" aria-pressed="false"><b>✓</b><span>${t}</span></button>`).join('');
-$$('#hp .ck').forEach(b=>b.onclick=()=>b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!='true'));
- 
-// tabs
-const tn=['Today','Week','Month','Goals','Habits'];
-$('#tabs').innerHTML=tn.map((t,i)=>`<button role="tab" aria-selected="${!i}" data-t="${t.toLowerCase()}">${t}</button>`).join('');
-$$('#tabs button').forEach(b=>b.onclick=()=>{$$('#tabs button').forEach(x=>x.setAttribute('aria-selected',x==b));$$('.pane').forEach(p=>p.hidden=p.id!='p-'+b.dataset.t)});
- 
-// toggle chip builder
-function chips(id,list,{multi=true,cls='',key}={}){const el=$(id);el.innerHTML=list.map(t=>`<button class="${cls}" aria-pressed="false">${t}</button>`).join('');
- return $$('button',el).forEach(b=>b.onclick=()=>{if(!multi)$$('button',el).forEach(x=>x!=b&&x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed',multi?b.getAttribute('aria-pressed')!='true':'true');b.dispatchEvent(new Event('chg',{bubbles:true}))})}
-chips('#moods',['😊 Good','😌 Calm','😴 Tired','🌧 Low'],{multi:false});$('#moods button').setAttribute('aria-pressed','true');
-const areas=['Personal','Career / Study','Health','Money','Relationships','Fun'];
-chips('#areas',areas,{cls:'chip'});chips('#mfocus',areas,{cls:'chip'});
-const feels=['Calm','Focused','Light','Confident','Grounded','Joyful'];
-chips('#feel',feels,{multi:false,cls:'chip'});
-$('#feel').addEventListener('chg',e=>{$('#fq').textContent=`“I want this month to feel ${e.target.textContent.toLowerCase()}.” ♡`});
-// week days
-const dn=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];chips('#days',dn,{cls:'chip lv'});
-$('#days').addEventListener('chg',()=>{const n=$$('#days [aria-pressed=true]').length;$('#wb').style.width=n/7*100+'%';$('#wv').textContent=n+' of 7 days'});
-chips('#mh',['Water','Workout','Reading','Skincare'],{cls:'chip'});
- 
-// goals
-const goals=[['Improve fitness','Complete 12 workouts this month',12,9,['Monday workout','Wednesday walk','Friday workout','Sunday stretching']],['Save money','Set aside a little each week',8,3,['Review spending','Move savings','No-spend weekend','Plan next month']],['Read more','Finish one book this month',10,6,['Read 10 pages','Read before bed','Visit the library','Write a note']],['Study consistently','Short sessions, most days',20,12,['Plan study blocks','Two focused sessions','Review notes','Weekend recap']],['Learn a skill','A little practice, often',15,5,['Watch one lesson','Practice 20 min','Try a mini project','Share progress']],['Personal project','Small steps toward launch',10,4,['Outline ideas','Work 30 min','Gather inspiration','Pick next step']]];
-let cur=0;const gl=$('#glist');
-function renderGoals(){gl.innerHTML=goals.map((g,i)=>`<button class="card goal" aria-pressed="${i==cur}" data-i="${i}"><b style="font-weight:500">${g[0]}</b><div class="pr"><span>${g[3]} / ${g[2]}</span><span>${Math.round(g[3]/g[2]*100)}%</span></div><div class="bar ${i%2?'lv':''}"><i style="width:${g[3]/g[2]*100}%"></i></div></button>`).join('');
- $$('.goal',gl).forEach(b=>b.onclick=()=>{cur=+b.dataset.i;renderGoals()});
- const g=goals[cur],p=Math.round(g[3]/g[2]*100);
- $('#gd').innerHTML=`<span class="tag">Example goal</span><h3>${g[0]}</h3><p>${g[1]}</p><div class="big" style="margin-top:14px">${p}%</div><div class="bar" style="margin:10px 0"><i style="width:${p}%"></i></div><p>Completed: <b style="color:var(--ink)">${g[3]} / ${g[2]}</b></p><div class="steppers"><button aria-label="Remove one" id="gm">−</button><button aria-label="Add one" id="gp">+</button><small style="color:var(--mute)">Log progress</small></div><b style="font-size:.9rem">This week's actions</b><div class="checks2">${g[4].map((t,i)=>`<button class="ck" aria-pressed="${i<2}"><b>✓</b><span>${t}</span></button>`).join('')}</div>`;
- $('#gm').onclick=()=>{g[3]=Math.max(0,g[3]-1);renderGoals()};$('#gp').onclick=()=>{g[3]=Math.min(g[2],g[3]+1);renderGoals();if(g[3]==g[2])toast('Goal complete ♡')};
- $$('.checks2 .ck').forEach(b=>b.onclick=()=>b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!='true'))}
-renderGoals();
- 
-// habit grid
-const hs=['Water','Workout','Reading','Skincare','Sleep','Journal','Meditation'],D=14;
-const seed=(h,d)=>((h*7+d*3)%5)>1;let html='<span></span>'.repeat(1);
-const hg=$('#hg');hg.style.gridTemplateColumns=`92px repeat(${D},1fr)`;
-html='<span></span>'+Array.from({length:D},(_,d)=>`<span class="d">${d+1}</span>`).join('');
-hs.forEach((h,i)=>{html+=`<span>${h}</span>`+Array.from({length:D},(_,d)=>`<button class="hc ${i%2?'lv':''}" aria-label="${h}, day ${d+1}" aria-pressed="${seed(i,d)}"></button>`).join('')});
-hg.innerHTML=html;$$('.hc',hg).forEach(b=>b.onclick=()=>b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!='true'));
- 
-// animate bars when visible
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){$$('.bar i[data-w]',e.target).forEach(i=>i.style.width=i.dataset.w+'%');io.unobserve(e.target)}}),{threshold:.2});
-$$('.mock,.prod').forEach(el=>io.observe(el));
-setTimeout(()=>$$('.bar i[data-w]').forEach(i=>i.style.width=i.dataset.w+'%'),300);
- 
-// nav highlight
-const links=$$('nav .l a'),sec=links.map(a=>$(a.getAttribute('href')));
-const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')=='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
-sec.forEach(s=>s&&so.observe(s));
-$('#cta').onclick=()=>toast('Thank you ♡ We would love to talk it through.');
-</script>
-</body>
-</html>
- 
+const NAV=[['home','Home','⌂'],['month','Monthly Plan','▦'],['week','Weekly Reset','↻'],['goals','Goals','◎'],['day','Daily','☀'],['care','Self-Care','✿'],['insights','Insights','◔'],['prem','Premium','✦']];
+const DEF=()=>({plan:'free',pg:'home',foc:{main:'Build calm, steady routines',pers:'In bed by 11pm on weekdays',work:'Finish my online course',money:'Save Rs. 20,000',care:'One slow Sunday every week'},
+mg:[{t:'Read 2 books',p:50},{t:'Exercise 3× a week',p:67},{t:'Save Rs. 20,000',p:65},{t:'Finish online course',p:40}],rf:['','',''],
+wk:['Submit my course assignment','Weekly planning + meal prep','Doomscrolling before bed','A long call with my sister'],
+wt:[{t:'Plan meals for the week',d:1},{t:'Laundry + tidy desk',d:0},{t:'Course module 5',d:0},{t:'Pay phone bill',d:0}],pri:['Course module 5'],
+sc:{},wr:'',mood:3,top:['Finish module 5','30-minute walk','Call Amma'],dt:[{t:'Reply to emails',d:1},{t:'Water the plants',d:0},{t:'Prep tomorrow’s outfit',d:0}],hab:{Water:1,Reading:1},one:'',room:{},cr:{},
+wins:['Woke up early two days in a row','Finished chapter 6'],
+goals:[{n:'Save Rs. 50,000',c:'Money',d:'31 Dec 2026',p:65,tot:50000,ms:[['First Rs. 10,000',1],['Halfway',1],['Rs. 40,000',0]]},{n:'Finish online course',c:'Learning',d:'30 Nov 2026',p:40,ms:[['Modules 1–4',1],['Modules 5–8',0],['Final project',0]]},{n:'Exercise 3× weekly',c:'Health',d:'31 Oct 2026',p:67,ms:[['Week 1',1],['Week 2',1],['Week 3',0]]},{n:'Read 2 books',c:'Personal',d:'31 Oct 2026',p:50,ms:[['Book one',1],['Book two',0]]}],
+gc:'All',money:{inc:85000,exp:41200,saved:32500,goal:50000},ex:[['Rent share',22000],['Groceries',9800],['Transport',4200],['Little treats',5200]],
+gr:[{t:'Atomic Habits',k:'Book',p:70},{t:'UX Basics (Coursera)',k:'Course',p:40},{t:'Public speaking',k:'Skill',p:25},{t:'No-spend weekend',k:'Challenge',p:50}],spl:{},tm:{},rg:['','','','','']});
+let S;try{S=JSON.parse(localStorage.getItem('aw3'))}catch(e){}S=S||DEF();
+const save=()=>{try{localStorage.setItem('aw3',JSON.stringify(S))}catch(e){}};
+const g=p=>p.split('.').reduce((o,k)=>o&&o[k],S),set=(p,v)=>{const a=p.split('.'),l=a.pop();a.reduce((o,k)=>o[k],S)[l]=v;save()};
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const rs=n=>'Rs. '+Math.round(n).toLocaleString('en-US'),pro=()=>S.plan==='pro';
+const pc=(a,b)=>b?Math.round(a/b*100):0;
+const inp=(k,ph='')=>`<input type="text" data-k="${k}" value="${esc(g(k))}" placeholder="${ph}">`;
+const ta=(k,ph='')=>`<textarea data-k="${k}" placeholder="${ph}">${esc(g(k))}</textarea>`;
+const ck=(k,l)=>`<label class="ck"><input type="checkbox" data-c="${k}" ${g(k)?'checked':''}><span>${l}</span></label>`;
+const ring=(p,c='')=>`<div class="ring ${c}" style="--p:${p}"><b>${p}%</b></div>`;
+const bar=(p,c='')=>`<div class="bar2 ${c}"><i style="width:${p}%"></i></div>`;
+const rng=(k,l)=>`<input type="range" data-k="${k}" data-n="1" value="${g(k)}" min="0" max="100" style="width:100%;accent-color:#c98591" aria-label="${l}">`;
+const tlist=(k)=>S[k].map((x,i)=>ck(k+'.'+i+'.d',esc(x.t))).join('')+`<div class="row"><input type="text" data-add="${k}" placeholder="Add something…" style="flex:1"></div>`;
+const head=(t,s)=>`<div class="pg-h"><h2>${t}</h2><p>${s}</p></div>`;
+const lockMark=`<span class="tag pr">Premium</span>`;
+const dayPct=()=>{const a=[S.mood?1:0,...S.top.map(x=>x.trim()?1:0),...S.dt.map(x=>x.d),...['Water','Exercise','Reading','Skincare','Sleep'].map(h=>S.hab[h]?1:0)];return pc(a.reduce((x,y)=>x+y,0),a.length)};
+const wkPct=()=>{const a=[...S.wk.map(x=>x.trim()?1:0),...S.wt.map(x=>x.d),S.pri.length>=3?1:0,Object.values(S.sc).filter(Boolean).length>1?1:0,S.wr.trim()?1:0];return pc(a.reduce((x,y)=>x+y,0),a.length)};
+const gp=()=>pc(S.goals.reduce((a,x)=>a+x.p,0),S.goals.length*100);
+const MODAL={insights:['Unlock Personal Insights ✨','See your habits, goals and weekly progress in one place.',['Personal progress dashboard','Habit consistency tracking','Monthly insights','Goal analytics']],
+goals:['Unlimited Goals ✨','Free includes 4 goals. Premium lets you add as many as your life needs.',['Unlimited goals','Organise by category','Milestones for every goal','Goal analytics']],
+money:['Unlock the Money & Saving Tracker 💰','Keep income, spending and savings goals in one calm place.',['Income & expense tracking','Monthly saving progress','Savings challenges','Simple, no-jargon summaries']],
+reflect:['Unlock the Reflection Guide 🧠','Deeper monthly prompts to understand what drains and fuels you.',['What drained / gave you energy','Habits worth keeping','Next-month intentions','Saved reflection history']],
+care:['Unlock the Self-Care Planner 🌸','Plan skincare, rest days and wellness habits for the week.',['Weekly self-care plans','Skincare & personal routines','Rest-day planning','Wellness habit tracking']],
+growth:['Unlock the Personal Growth Tracker 📚','Track books, courses, skills and challenges as you grow.',['Books & courses','Skills & challenges','Progress for each','Learning goals']],
+tmpl:['Unlock Premium Templates 🎀','Start any routine in one tap with ready-made templates.',['Morning & night routines','30-day challenges','Savings challenge','Goal setting & more']]};
+function modal(k){const m=MODAL[k];$('#layer').innerHTML=`<div class="ov" data-a="close"><div class="mod" role="dialog" aria-modal="true" onclick="event.stopPropagation()"><span class="tag pr">Aushi’s Way♡ Premium</span><h2 style="margin:12px 0 6px">${m[0]}</h2><p class="mute">${m[1]}</p><ul class="t">${m[2].map(x=>`<li>${x}</li>`).join('')}</ul><p class="sm mute">Rs. 990 / month · or Rs. 8,990 / year</p><div class="row" style="margin-top:14px"><button class="btn rose" data-a="upgrade">Upgrade to Premium</button><button class="btn ghost" data-a="close">Maybe Later</button></div></div></div>`}
+const gate=(k,fn)=>pro()?fn():modal(k);
+function toast(t){const e=document.createElement('div');e.className='toast';e.textContent=t;document.body.append(e);setTimeout(()=>e.remove(),2200)}
+function pricing(){return `<div class="grid g2" id="pricing"><div class="card"><h3>Free</h3><div class="price">Rs. 0</div><p class="mute">Basic tools to get organized.</p><ul class="t"><li>Monthly planning</li><li>Weekly reset</li><li>Basic goals (up to 4)</li><li>Daily checklist</li><li>Habit tracking</li></ul><button class="btn ghost" data-a="start">Start Free</button></div>
+<div class="card soft"><span class="tag pr">Most loved</span><h3 style="margin-top:8px">Premium</h3><div class="price">Rs. 990 <small>/ month</small></div><p class="mute">For girls who want a little more structure and accountability.</p><ul class="t"><li>Everything in Free</li><li>Unlimited goals</li><li>Personal insights</li><li>Money & savings tracker</li><li>Self-care planner</li><li>Personal growth tracker</li><li>Premium templates</li><li>Advanced reflections</li></ul><div class="row"><button class="btn rose" data-a="upgrade">Start Premium</button><span class="sm">or <b>Rs. 8,990 / year</b> — save with the yearly plan</span></div></div></div>`}
+const V={
+home(){return `<section class="hero"><h1>Your life, a little more organized. ♡</h1><p class="lead">Plan your month, reset your week, track your goals and create routines that actually work for you.</p><div class="row"><button class="btn rose" data-a="start">Start for Free</button><button class="btn ghost" data-a="go" data-v="prem">Explore Premium</button></div><p class="mute sm" style="margin-top:14px">Simple tools to help you organize your days, stay focused on your goals, and make a little more time for yourself.</p></section>
+<div class="grid g3" style="margin:26px 0"><div class="card"><div class="row sp"><h3>Today ♡</h3>${ring(dayPct())}</div><div class="mute sm">Top 3</div>${S.top.map(t=>`<div class="ck">◦ ${esc(t)}</div>`).join('')}<button class="btn sm ghost" data-a="go" data-v="day">Open today</button></div>
+<div class="card gl"><h3>Save Rs. 50,000</h3><p class="mute sm">Rs. 32,500 / Rs. 50,000</p>${bar(65)}<p class="sm" style="margin-top:12px">Next milestone: Rs. 40,000</p><div class="row" style="margin-top:8px"><button class="btn sm ghost" data-a="go" data-v="goals">My goals</button></div></div>
+<div class="card sage"><h3>Sunday Reset ↻</h3><p class="sm">Take a few minutes to prepare for a better week.</p>${bar(wkPct(),'s')}<p class="sm mute">${wkPct()}% ready</p><button class="btn sm" data-a="go" data-v="week">Start my reset</button></div></div>
+<div class="grid g2"><div class="card"><span class="tag">Free</span><h3 style="margin:8px 0">Everything to get organized</h3><p class="mute">Monthly plan, weekly reset, goals, daily checklist, habits and Daily Girl Things — yours, forever.</p></div><div class="card soft"><span class="tag pr">Premium</span><h3 style="margin:8px 0">A little more support</h3><p class="mute">Insights, money tracker, self-care planner, growth tracker and templates for the life you’re building.</p></div></div>
+<h2 style="margin:44px 0 6px">Choose your plan</h2><p class="mute" style="margin-bottom:16px">Let’s reset together. ♡ Start free, upgrade whenever it feels right.</p>${pricing()}`},
+month(){const ev={5:'Course module due',12:'Amma’s birthday',18:'Sunday reset',24:'Book club',31:'Month review'};let c=['S','M','T','W','T','F','S'].map(x=>`<span class="h">${x}</span>`).join('')+'<span></span>'.repeat(4);for(let d=1;d<=31;d++)c+=`<span class="${ev[d]?'ev':''} ${d==1?'td':''}" ${ev[d]?`title="${ev[d]}"`:''}>${d}</span>`;
+const F=[['main','My main focus'],['pers','Personal goal'],['work','Work / study goal'],['money','Financial goal'],['care','Self-care goal']];
+return head('My October Reset ♡','What matters most this month? You don’t have to have everything figured out.')+`<div class="grid g2"><div class="card"><h3>My Focus</h3>${F.map(f=>`<label class="f">${f[1]}</label>${inp('foc.'+f[0])}`).join('')}</div>
+<div class="card"><h3>Monthly Goals</h3>${S.mg.map((x,i)=>`<div style="margin:10px 0"><div class="row sp"><b>${esc(x.t)}</b><span class="mute">${x.p}%</span></div>${bar(x.p)}${rng('mg.'+i+'.p',x.t)}</div>`).join('')}</div>
+<div class="card"><h3>Important Dates</h3><div class="cal">${c}</div><p class="sm mute" style="margin-top:10px">${Object.entries(ev).map(e=>e[0]+' Oct · '+e[1]).join(' &nbsp;·&nbsp; ')}</p></div>
+<div class="card soft"><h3>Monthly Reflection</h3>${['What went well?','What do I want to improve?','What am I proud of?'].map((q,i)=>`<label class="f">${q}</label>${ta('rf.'+i)}`).join('')}</div></div><div style="margin-top:18px"><button class="btn rose" data-a="saveplan">Save My Plan</button></div>`},
+week(){const sc=['Hair care','Skincare','Workout','Read','Rest','Journaling','Time with family/friends'],W=['Accomplish','Focus on','Avoid','Make time for'];
+return head('Sunday Reset ♡','Take a few minutes to prepare for a better week. Make this week yours.')+`<div class="card" style="margin-bottom:16px"><div class="row sp"><b>Your reset is ${wkPct()}% ready</b></div>${bar(wkPct())}</div><div class="grid g2"><div class="card"><h3>This Week I Want To…</h3>${W.map((w,i)=>`<label class="f">${w}</label>${inp('wk.'+i)}`).join('')}</div>
+<div class="card"><h3>Weekly To-Do</h3>${tlist('wt')}</div>
+<div class="card"><h3>My Priorities</h3><p class="mute sm">Pick your top 3 (${S.pri.length}/3)</p><div class="chips" style="margin-top:8px">${S.wt.map(x=>`<button class="chip ${S.pri.includes(x.t)?'on':''}" data-a="pri" data-v="${esc(x.t)}">${esc(x.t)}</button>`).join('')}</div></div>
+<div class="card sage"><h3>Self-Care This Week</h3>${sc.map(s=>ck('sc.'+s.replace(/\W/g,''),s)).join('')}</div></div>
+<div class="card" style="margin-top:16px"><h3>Weekly Reflection</h3><label class="f">What made this week good?</label>${ta('wr','A moment, a win, a small joy…')}</div><div style="margin-top:18px"><button class="btn rose" data-a="finish">Complete My Reset</button></div>`},
+goals(){const cats=['All','Personal','Career','Money','Health','Learning'],L=S.goals.filter(x=>S.gc=='All'||x.c==S.gc);
+return head('My Goals','Small steps still count.')+`<div class="row sp" style="margin-bottom:16px"><div class="chips">${cats.map(c=>`<button class="chip ${S.gc==c?'on':''}" data-a="gc" data-v="${c}">${c}</button>`).join('')}</div><button class="btn rose sm" data-a="addgoal">+ Add a goal</button></div><p class="sm mute">${S.goals.length} goals · ${pro()?'Unlimited with Premium':'Free plan includes up to 4'}</p><div class="grid g2" style="margin-top:12px">${L.map(x=>{const i=S.goals.indexOf(x);return `<div class="card gl"><div class="row sp"><span class="tag">${x.c}</span><span class="tag pr" style="background:${x.p>=100?'#dff0df':'#f3ead8'}">${x.p>=100?'Completed':x.p>=50?'On track':'Getting started'}</span></div><h3 style="margin:10px 0 2px">${esc(x.n)}</h3><p class="mute sm">Target: ${x.d}${x.tot?` · ${rs(x.tot*x.p/100)} / ${rs(x.tot)}`:''}</p><div class="row"><div style="flex:1">${bar(x.p)}${rng('goals.'+i+'.p',x.n)}</div><b>${x.p}%</b></div><div style="margin-top:8px">${x.ms.map((m,j)=>ck('goals.'+i+'.ms.'+j+'.1',m[0])).join('')}</div><button class="btn sm ghost" data-a="editgoal" data-v="${i}">Edit goal</button></div>`}).join('')}</div>`},
+day(){const H=['Water','Exercise','Reading','Skincare','Sleep'],M=['😫','😕','😐','🙂','🥰'];
+return head('Today ♡','Thursday, 1 October · Hi Maya, let’s reset together.')+`<div class="card" style="margin-bottom:16px"><div class="row sp"><div><h3>Today’s progress</h3><p class="mute sm">You’re doing better than you think.</p></div>${ring(dayPct())}</div></div><div class="grid g2"><div class="card"><h3>Today’s Mood</h3><div class="moods">${M.map((m,i)=>`<button class="${S.mood==i+1?'on':''}" data-a="mood" data-v="${i+1}" aria-label="mood ${i+1}">${m}</button>`).join('')}</div></div>
+<div class="card"><h3>Today’s Top 3</h3>${[0,1,2].map(i=>inp('top.'+i,'Priority '+(i+1))).join('')}</div>
+<div class="card"><h3>To-Do</h3>${tlist('dt')}</div><div class="card sage"><h3>Habit Check</h3>${H.map(h=>ck('hab.'+h,h)).join('')}</div>
+<div class="card soft" style="grid-column:1/-1"><h3>One Thing For Myself</h3>${inp('one','Something small, just for you…')}</div></div>`},
+care(){const R=['Make the bed','Clear the surfaces','Dishes & cups out','Laundry in the basket','Open the window'],C=['Skincare','Hair','Hydration','Rest'],Ro=['Make your favorite drink','Go for a walk','Put on a playlist','Journal for 5 minutes'];
+return head('Daily Girl Things ♡','The little things that make a day feel like yours.')+`<div class="grid g2"><div class="card"><h3>Reset My Room · 5 min</h3>${R.map(r=>ck('room.'+r.replace(/\W/g,''),r)).join('')}</div><div class="card sage"><h3>Self-Care Check</h3>${C.map(r=>ck('cr.'+r,r)).join('')}</div>
+<div class="card soft"><h3>Romanticize Your Day</h3>${Ro.map(r=>ck('cr.r'+r.replace(/\W/g,''),r)).join('')}</div>
+<div class="card"><h3>Little Wins</h3>${S.wins.map(w=>`<div class="ck">🌸 ${esc(w)}</div>`).join('')}<input type="text" data-add="wins" placeholder="Add a little win…"></div></div>`},
+insights(){const b=`<div class="grid g2"><div class="card"><h3>September Progress</h3><div class="row"><div>${ring(82)}</div><div><p><b>82%</b> weekly completion</p><p><b>76%</b> habits completed</p><p><b>4/6</b> goals completed</p></div></div></div>
+<div class="card"><h3>Weekly completion</h3><div class="bars">${[70,78,85,82].map(v=>`<div style="height:${v}%"><span>${v}%</span></div>`).join('')}</div><div class="bars">${['W1','W2','W3','W4'].map(v=>`<span>${v}</span>`).join('')}</div></div>
+<div class="card"><h3>Habit consistency</h3>${[['Water',92],['Exercise',68],['Reading',74],['Skincare',85],['Sleep',61]].map(h=>`<div class="row sp sm"><span>${h[0]}</span><span>${h[1]}%</span></div>${bar(h[1],'s')}`).join('')}</div>
+<div class="card soft"><h3>Self-care consistency</h3><div class="row"><div>${ring(79,'soft')}</div><p class="sm">Your best days start with skincare and a glass of water. ♡</p></div></div></div>`;
+return head('Insights ✨','See what’s working for you.')+(pro()?b:`<div class="blur">${b}</div><div class="card" style="margin-top:-250px;position:relative;text-align:center;max-width:380px;margin-left:auto;margin-right:auto"><h3>Personal Insights is a Premium feature</h3><p class="mute">See your habits, goals and weekly progress in one place.</p><button class="btn rose" data-a="up" data-v="insights">Unlock Insights</button></div>`)},
+prem(){const T=[['Monthly Reset',0],['Sunday Reset',0],['Morning Routine',1],['Night Routine',1],['30-Day Challenge',1],['Savings Challenge',1],['Goal Setting',1],['Habit Challenge',1]];
+const tm=`<div class="card" id="t"><div class="row sp"><h3>🎀 Premium Templates</h3></div><div class="grid g2" style="gap:10px">${T.map(t=>`<button class="card ${t[1]&&!pro()?'lock':''}" style="text-align:left;padding:14px;cursor:pointer;font:inherit" data-a="tmpl" data-v="${t[0]}"><b>${t[0]}</b><br><span class="tag ${t[1]?'pr':''}">${t[1]?'Premium':'Free'}</span> ${S.tm[t[0]]?'<span class="sm">✓ added</span>':''}</button>`).join('')}</div></div>`;
+if(!pro())return head('Aushi’s Way♡ Premium','A little more support for the life you’re building.')+`<div class="grid g3" style="margin-bottom:20px">${[['insights','📊 Personal Insights','Charts for habits, goals and weekly completion.'],['goals','✨ Unlimited Goals','Organise every goal into categories.'],['reflect','🧠 Reflection Guide','Deeper monthly prompts.'],['money','💰 Money & Saving','Income, expenses and savings progress.'],['care','🌸 Self-Care Planner','Routines, rest days, wellness.'],['growth','📚 Growth Tracker','Books, courses, skills, challenges.']].map(f=>`<button class="card" style="text-align:left;cursor:pointer;font:inherit" data-a="up" data-v="${f[0]}"><h3>${f[1]}</h3><p class="mute sm">${f[2]}</p></button>`).join('')}</div>${tm}<h2 style="margin:36px 0 14px">Plans</h2>${pricing()}`;
+const m=S.money,sv=pc(m.saved,m.goal);
+return `<div class="pg-h"><h2>Good morning, Maya ♡</h2><p>Here’s your month at a glance.</p></div><div class="card soft" style="margin-bottom:16px"><h3>Your October</h3><div class="grid g3" style="gap:10px;text-align:center"><div><div class="price">82%</div><span class="sm">Overall progress</span></div><div><div class="price">4</div><span class="sm">Goals completed</span></div><div><div class="price">76%</div><span class="sm">Habit consistency</span></div></div><div class="row sp" style="margin-top:14px"><span><b>${rs(m.saved)}</b> saved</span><span class="sm">Self-care score 79%</span></div></div>
+<div class="grid g2"><div class="card"><h3>💰 Money & Saving</h3><p class="sm mute">October Savings Goal · ${rs(m.goal)}</p><div class="row"><div style="flex:1">${bar(sv)}</div><b>${sv}%</b></div><div class="grid g2" style="gap:8px"><div><label class="f">Income</label><input type="number" data-k="money.inc" data-n="1" value="${m.inc}"></div><div><label class="f">Saved</label><input type="number" data-k="money.saved" data-n="1" value="${m.saved}"></div></div><p class="sm" style="margin-top:8px">Spent ${rs(S.ex.reduce((a,x)=>a+x[1],0))} · ${S.ex.map(x=>x[0]).join(', ')}</p><p class="sm mute">A simple personal tracker — not financial advice.</p></div>
+<div class="card"><h3>🧠 Monthly Reflection Guide</h3>${['What drained your energy this month?','What gave you energy?','Which habits are worth keeping?','What should you stop doing?','What do you want next month to feel like?'].map((q,i)=>`<label class="f">${q}</label>${inp('rg.'+i)}`).join('')}</div>
+<div class="card sage"><h3>🌸 Self-Care Planner</h3><div class="sm mute">Rest days & routines</div>${['Mon · Skincare + early night','Wed · Hair mask','Fri · Workout + walk','Sun · Full rest day'].map(s=>ck('spl.'+s.slice(0,3),s)).join('')}</div>
+<div class="card"><h3>📚 Personal Growth</h3>${S.gr.map((x,i)=>`<div style="margin:8px 0"><div class="row sp"><b>${esc(x.t)}</b><span class="tag">${x.k}</span></div>${bar(x.p)}${rng('gr.'+i+'.p',x.t)}</div>`).join('')}</div></div><div style="margin-top:16px">${tm}</div>`}};
+function render(){$('#dn').innerHTML=NAV.map(n=>`<button class="${S.pg==n[0]?'on':''}" data-a="go" data-v="${n[0]}">${n[1]}</button>`).join('');
+$('#bn').innerHTML=NAV.map(n=>`<button class="${S.pg==n[0]?'on':''}" data-a="go" data-v="${n[0]}"><b>${n[2]}</b>${n[1].replace('Monthly Plan','Month').replace('Weekly Reset','Week')}</button>`).join('');
+const p=$('#plan');p.textContent=pro()?'✦ Premium':'Free plan';p.className='pill '+(pro()?'pro':'');
+$('#app').innerHTML=V[S.pg]()}
+function go(p){S.pg=p;save();render();scrollTo(0,0)}
+const OB=[['What do you want to focus on?',['Productivity','Goals','Self-care','Money','Personal growth']],['How would you describe your current routine?',['I need structure','I’m trying to build better habits','I’m working toward specific goals','I just want to feel more organized']]];
+let ob={s:0,a:[]};
+function onboard(){const l=$('#layer');if(ob.s>1){l.innerHTML=`<div class="ov full"><div class="mod"><div class="done"><div class="h">♡</div><h2>Let’s build your space ♡</h2><p class="mute">Setting up your plan, your reset and your goals…</p>${bar(100)}</div></div></div>`;setTimeout(()=>{l.innerHTML='';ob={s:0,a:[]};go('day');toast('Welcome, Maya ♡')},1800);return}
+const q=OB[ob.s];l.innerHTML=`<div class="ov full"><div class="mod"><p class="sm mute">Step ${ob.s+1} of 3</p><h2 style="margin:8px 0 16px">${q[0]}</h2>${q[1].map(o=>`<button class="opt" data-a="ob" data-v="${o}">${ob.s?'':'♡ '}${o}</button>`).join('')}</div></div>`}
+const A={go:t=>go(t.dataset.v),close:()=>$('#layer').innerHTML='',up:t=>modal(t.dataset.v),
+plan:()=>{if(pro()){S.plan='free'}else{modal('insights');return}save();render()},
+upgrade:()=>{S.plan='pro';save();$('#layer').innerHTML='';go('prem');toast('Welcome to Premium ♡ (demo)')},
+start:()=>{ob={s:0,a:[]};onboard()},ob:t=>{ob.a.push(t.dataset.v);ob.s++;onboard()},
+saveplan:()=>toast('Your plan is saved ♡'),mood:t=>{set('mood',+t.dataset.v);render()},gc:t=>{S.gc=t.dataset.v;save();render()},
+pri:t=>{const v=t.dataset.v,i=S.pri.indexOf(v);if(i>=0)S.pri.splice(i,1);else if(S.pri.length<3)S.pri.push(v);else toast('Top 3 only — small steps still count');save();render()},
+finish:()=>{$('#layer').innerHTML=`<div class="ov" data-a="close"><div class="mod done"><div class="h">♡</div><h2>Your week is ready.<br>You’ve got this. ♡</h2><p class="mute">Reset ${wkPct()}% complete. Make this week yours.</p><button class="btn rose" data-a="close">Let’s go</button></div></div>`},
+addgoal:()=>{if(!pro()&&S.goals.length>=4)return modal('goals');const n=prompt('Goal name?');if(!n)return;const c=prompt('Category: Personal, Career, Money, Health or Learning','Personal')||'Personal';S.goals.push({n,c,d:prompt('Target date?','31 Dec 2026')||'—',p:0,ms:[['First step',0],['Halfway',0],['Done',0]]});save();render()},
+editgoal:t=>{const x=S.goals[t.dataset.v],n=prompt('Goal name',x.n);if(n){x.n=n;x.d=prompt('Target date',x.d)||x.d;save();render()}},
+tmpl:t=>{const n=t.dataset.v;if(!pro()&&n!='Monthly Reset'&&n!='Sunday Reset')return modal('tmpl');S.tm[n]=1;save();render();toast(n+' added to your space ♡')},
+reset:()=>{localStorage.removeItem('aw3');S=DEF();render();toast('Demo reset')}};
+document.addEventListener('click',e=>{const t=e.target.closest('[data-a]');if(t&&A[t.dataset.a])A[t.dataset.a](t)});
+document.addEventListener('change',e=>{const c=e.target.dataset.c;if(c){set(c,e.target.checked?1:0);render()}});
+document.addEventListener('input',e=>{const t=e.target,k=t.dataset.k;if(!k)return;set(k,t.dataset.n?+t.value:t.value);if(t.type=='range'){const b=t.parentElement.querySelector('.bar2 i');if(b)b.style.width=t.value+'%'}});
+document.addEventListener('keydown',e=>{const k=e.target.dataset.add;if(k&&e.key=='Enter'&&e.target.value.trim()){const v=e.target.value.trim();S[k].push(k=='wins'?v:{t:v,d:0});save();render()}});
+render();
+</script></body></html>
